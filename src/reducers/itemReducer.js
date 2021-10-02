@@ -9,7 +9,6 @@ const itemReducer = (state = initialState, action) => {
         cartItems: [...state.cartItems, action.payload],
       });
 
-      break;
     case REMOVE_FROM_CART:
       //TODO
       let filterItem = state.cartItems.filter(
@@ -21,7 +20,6 @@ const itemReducer = (state = initialState, action) => {
       return Object.assign({}, state, {
         cartItems: filterItem,
       });
-      break;
     case SET_QUANTITY:
       let idx = state.cartItems.findIndex(
         (el) => el.itemId === action.payload.itemId
@@ -38,7 +36,6 @@ const itemReducer = (state = initialState, action) => {
         ],
       });
 
-      break;
     default:
       return state;
   }
